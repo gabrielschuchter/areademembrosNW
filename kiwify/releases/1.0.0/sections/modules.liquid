@@ -1,0 +1,240 @@
+{% assign course = all_courses[section.settings.course_id] %}
+{% assign filtered_modules_ids = course.modules
+  | reject_exp: 'module_id', 'all_modules[module_id] == undefined'
+  | reject_exp: 'module_id', 'all_modules[module_id].user_data.visible == false and all_modules[module_id].custom_offer.enabled == false and not all_modules[module_id].custom_offer.external_link'
+%}
+
+{% if filtered_modules_ids.size > 0 or is_preview %}
+  {% assign filtered_modules = '' | split: ',' %}
+  {% for module_id in filtered_modules_ids %}
+    {% assign filtered_modules = filtered_modules | push: all_modules[module_id] %}
+  {% endfor %}
+
+  <section
+    id="section__{{ section.id }}"
+    class="kiwi-section nw-section nw-section--{{ section.settings.visual_style | default: 'default' }} px-6 md:px-12 pb-6 md:pb-12"
+    data-kiwi-section-id="{{ section.id }}"
+    data-nw-accent="{{ section.settings.accent | default: 'blue' }}"
+  >
+    <div class="nw-section__inner">
+      {% if section.settings.show_welcome_box %}
+        <aside class="nw-welcome-box" aria-labelledby="nw-welcome-title-{{ section.id }}">
+          <div class="nw-welcome-box__icon" aria-hidden="true">NW</div>
+          <div class="nw-welcome-box__content">
+            <span class="nw-welcome-box__label">
+              {% if section.settings.welcome_label != blank %}{{ section.settings.welcome_label }}{% else %}{{ 'welcome.label' | t }}{% endif %}
+            </span>
+            <h1 id="nw-welcome-title-{{ section.id }}" class="nw-welcome-box__title">
+              {% if section.settings.welcome_title != blank %}{{ section.settings.welcome_title }}{% else %}{{ 'welcome.title' | t }}{% endif %}
+            </h1>
+            <p class="nw-welcome-box__text">
+              {% if section.settings.welcome_text != blank %}{{ section.settings.welcome_text }}{% else %}{{ 'welcome.text' | t }}{% endif %}
+            </p>
+            <span class="nw-welcome-box__hint">
+              {% if section.settings.welcome_hint != blank %}{{ section.settings.welcome_hint }}{% else %}{{ 'welcome.hint' | t }}{% endif %}
+            </span>
+          </div>
+        </aside>
+      {% endif %}
+
+      <header class="nw-section__header">
+        {% if section.settings.eyebrow != blank %}
+          <p class="nw-section__eyebrow">{{ section.settings.eyebrow }}</p>
+        {% endif %}
+        <h2 id="section__{{ section.id }}__title" class="nw-section__title">
+          {{ section.settings.title }}
+        </h2>
+        {% if section.settings.description != blank %}
+          <p class="nw-section__description">{{ section.settings.description }}</p>
+        {% endif %}
+      </header>
+
+      {% if filtered_modules.size > 0 %}
+        {% liquid
+          assign section_items = filtered_modules
+          assign should_display_progress = true
+          assign is_horizontal = false
+          if section.settings.items_layout == 'landscape'
+            assign is_horizontal = true
+          endif
+          assign percentage_field = 'progress'
+          assign path_format = '/{course_id}/{id}'
+        %}
+        {% render 'cards',
+          section: section,
+          section_items: section_items,
+          is_preview: is_preview,
+          source: source,
+          should_display_progress: should_display_progress,
+          is_horizontal: is_horizontal,
+          percentage_field: percentage_field,
+          path_format: path_format
+        %}
+      {% endif %}
+    </div>
+  </section>
+{% endif %}
+
+{% schema %}
+{
+  "name": "t:sections.modules.section_title",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "t:sections.modules.title.label",
+      "placeholder": "t:sections.modules.title.placeholder"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "t:sections.common.eyebrow.label",
+      "placeholder": "t:sections.common.eyebrow.placeholder"
+    },
+    {
+      "type": "text",
+      "id": "description",
+      "label": "t:sections.common.description.label",
+      "placeholder": "t:sections.common.description.placeholder"
+    },
+    {
+      "type": "select",
+      "id": "visual_style",
+      "label": "t:sections.common.visual_style.label",
+      "options": [
+        {
+          "value": "default",
+          "label": "t:sections.common.visual_style.default"
+        },
+        {
+          "value": "featured",
+          "label": "t:sections.common.visual_style.featured"
+        }
+      ],
+      "default": "default"
+    },
+    {
+      "type": "select",
+      "id": "accent",
+      "label": "t:sections.common.accent.label",
+      "options": [
+        {"value": "blue", "label": "t:sections.common.accent.blue"},
+        {"value": "cyan", "label": "t:sections.common.accent.cyan"},
+        {"value": "violet", "label": "t:sections.common.accent.violet"},
+        {"value": "green", "label": "t:sections.common.accent.green"},
+        {"value": "amber", "label": "t:sections.common.accent.amber"},
+        {"value": "slate", "label": "t:sections.common.accent.slate"}
+      ],
+      "default": "blue"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_welcome_box",
+      "label": "t:sections.modules.show_welcome_box",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "welcome_label",
+      "label": "t:sections.modules.welcome_label"
+    },
+    {
+      "type": "text",
+      "id": "welcome_title",
+      "label": "t:sections.modules.welcome_title"
+    },
+    {
+      "type": "text",
+      "id": "welcome_text",
+      "label": "t:sections.modules.welcome_text"
+    },
+    {
+      "type": "text",
+      "id": "welcome_hint",
+      "label": "t:sections.modules.welcome_hint"
+    },
+    {
+      "type": "text",
+      "id": "format_label",
+      "label": "t:sections.common.format_label.label"
+    },
+    {
+      "type": "text",
+      "id": "category_label",
+      "label": "t:sections.common.category_label.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_content_count",
+      "label": "t:sections.common.show_content_count",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "items_variant",
+      "label": "t:sections.modules.items_variant.label",
+      "options": [
+        {
+          "value": "content_over",
+          "label": "t:sections.modules.items_variant.content_over",
+          "kiwi_extra": {
+            "icon": "fas fa-eye"
+          }
+        },
+        {
+          "value": "content_hidden",
+          "label": "t:sections.modules.items_variant.content_hidden",
+          "kiwi_extra": {
+            "icon": "fas fa-eye-slash"
+          }
+        },
+        {
+          "value": "mouse_hover",
+          "label": "t:sections.modules.items_variant.mouse_hover",
+          "kiwi_extra": {
+            "icon": "CursorClickIcon"
+          }
+        }
+      ],
+      "kiwi_extra": {
+        "labeled": false
+      },
+      "default": "content_over"
+    },
+    {
+      "type": "select",
+      "id": "items_layout",
+      "label": "t:sections.modules.items_layout.label",
+      "options": [
+        {
+          "value": "portrait",
+          "label": "t:sections.modules.items_layout.portrait",
+          "kiwi_extra": {
+            "icon": "fa fa-portrait"
+          }
+        },
+        {
+          "value": "landscape",
+          "label": "t:sections.modules.items_layout.landscape",
+          "kiwi_extra": {
+            "icon": "fa fa-image"
+          }
+        }
+      ],
+      "kiwi_extra": {
+        "labeled": false
+      },
+      "default": "portrait"
+    },
+    {
+      "type": "course",
+      "id": "course_id",
+      "label": "t:sections.modules.course_id.label",
+      "placeholder": "t:sections.modules.course_id.placeholder"
+    }
+  ],
+  "kiwi_extra": {
+    "icon": "fas fa-sitemap"
+  }
+}
+{% endschema %}

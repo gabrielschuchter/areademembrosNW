@@ -1,0 +1,135 @@
+{% assign slides_count = section.block_order.size %}
+{% assign slides_delay = section.settings.slides_delay | default: 5 %}
+{% assign slides_order = section.block_order %}
+{% assign slides = section.blocks %}
+
+{% if slides_count > 0 or is_preview %}
+  <section class="nw-banner" aria-label="{{ 'banner.region_label' | t }}">
+    <div
+      class="embla relative overflow-hidden group"
+      data-slides-delay="{{ slides_delay }}"
+      data-embla-options='{ "loop": true, "dragFree": false{% if slides_count == 1 %}, "active": false{% endif %} }'
+    >
+      <div class="embla__viewport overflow-hidden">
+        <div class="embla__container flex">
+          {% for slide_id in slides_order %}
+            {% assign slide = slides[slide_id].settings %}
+            <div class="embla__slide flex-shrink-0 w-screen max-w-full nw-banner__slide">
+              {% if slide.banner_type == 'image' %}
+                <picture>
+                  {% if slide.desktop_image %}
+                    <source media="(min-width: 768px)" srcset="{{ slide.desktop_image }}">
+                  {% endif %}
+                  {% if slide.mobile_image %}
+                    <source srcset="{{ slide.mobile_image }}">
+                  {% endif %}
+                  <img
+                    src="{{ slide.desktop_image | default: slide.mobile_image }}"
+                    alt="{{ slide.alt_text | escape }}"
+                    {% if forloop.first %}loading="eager" fetchpriority="high"{% else %}loading="lazy"{% endif %}
+                    width="2000"
+                    height="590"
+                    class="nw-banner__image"
+                  >
+                </picture>
+              {% endif %}
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+
+      {% if slides_count > 1 %}
+        <button type="button" data-embla-prev class="embla__button nw-banner__button absolute z-10 top-1/2 left-2 -translate-y-1/2 grid place-items-center w-10 h-10" aria-label="{{ 'carousel.previous' | t }}">
+          <svg aria-hidden="true" width="1em" height="1em" viewBox="0 0 16 16"><path fill="currentColor" fill-rule="evenodd" d="M9.78 4.22a.75.75 0 0 1 0 1.06L7.06 8l2.72 2.72a.75.75 0 1 1-1.06 1.06L5.47 8.53a.75.75 0 0 1 0-1.06l3.25-3.25a.75.75 0 0 1 1.06 0" clip-rule="evenodd"></path></svg>
+        </button>
+        <button type="button" data-embla-next class="embla__button nw-banner__button absolute z-10 top-1/2 right-2 -translate-y-1/2 grid place-items-center w-10 h-10" aria-label="{{ 'carousel.next' | t }}">
+          <svg aria-hidden="true" width="1em" height="1em" viewBox="0 0 16 16"><path fill="currentColor" fill-rule="evenodd" d="M6.22 4.22a.75.75 0 0 1 1.06 0l3.25 3.25a.75.75 0 0 1 0 1.06l-3.25 3.25a.75.75 0 0 1-1.06-1.06L8.94 8 6.22 5.28a.75.75 0 0 1 0-1.06" clip-rule="evenodd"></path></svg>
+        </button>
+        <div class="absolute bottom-4 left-0 right-0 flex gap-1 justify-center" aria-label="{{ 'banner.pagination' | t }}">
+          {% for slide_id in slides_order %}
+            <button type="button" class="flex-shrink-0 w-4 h-4 flex items-center justify-center" data-embla-dot aria-label="{{ 'banner.go_to_slide' | t: number: forloop.index }}">
+              <span class="dot w-2 h-2 rounded-full bg-primary opacity-30 transition-all duration-200"></span>
+            </button>
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+  </section>
+{% endif %}
+
+{% schema %}
+{
+  "name": "t:sections.banner.title",
+  "settings": [
+    {
+      "type": "range",
+      "id": "slides_delay",
+      "label": "t:sections.banner.slides_delay",
+      "min": 3,
+      "max": 60,
+      "step": 1,
+      "default": 5,
+      "unit": "s"
+    }
+  ],
+  "kiwi_extra": {
+    "icon": "fas fa-images"
+  },
+  "max_blocks": 3,
+  "blocks": [
+    {
+      "type": "slide",
+      "name": "t:sections.banner.slide",
+      "settings": [
+        {
+          "type": "select",
+          "id": "banner_type",
+          "label": "t:sections.banner.banner_type",
+          "default": "image",
+          "options": [
+            {
+              "value": "image",
+              "label": "t:sections.banner.image",
+              "kiwi_extra": {
+                "icon": "fas fa-image"
+              }
+            }
+          ],
+          "kiwi_extra": {
+            "icon": "fas fa-cog",
+            "hidden": true
+          }
+        },
+        {
+          "type": "image_picker",
+          "id": "mobile_image",
+          "label": "t:sections.banner.mobile_image",
+          "default": "https://placehold.co/768x432"
+        },
+        {
+          "type": "image_picker",
+          "id": "desktop_image",
+          "label": "t:sections.banner.desktop_image",
+          "default": "https://placehold.co/2000x590"
+        },
+        {
+          "type": "text",
+          "id": "alt_text",
+          "label": "t:sections.banner.alt_text",
+          "placeholder": "t:sections.banner.alt_text_placeholder"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.banner.title",
+      "blocks": [
+        {
+          "type": "slide"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

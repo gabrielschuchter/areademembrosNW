@@ -1,0 +1,224 @@
+{% comment %}
+  Shared card component.
+  Native access, progress, delivery, expiration, custom-offer and router behavior are preserved.
+{% endcomment %}
+
+{% assign image_width = 400 %}
+{% assign image_height = 600 %}
+{% if is_horizontal %}
+  {% assign image_width = 640 %}
+  {% assign image_height = 360 %}
+{% endif %}
+
+{% assign image_url = item.thumbnail_slider_cover | default: item.logo_url | default: item.thumbnail | default: item.video_thumbnail %}
+{% assign visible = item.user_data.visible %}
+{% assign external_link = item.custom_offer.external_link %}
+{% assign progress = item.user_data[percentage_field] | default: 0 %}
+{% assign content_count = item.user_data.content_count %}
+
+{% assign is_purchasable = false %}
+{% unless visible %}
+  {% if item.custom_offer.enabled or external_link != blank %}
+    {% assign is_purchasable = true %}
+  {% endif %}
+{% endunless %}
+
+{% assign now = 'now' | date: '%s', 'UTC' %}
+{% assign delivery_date_timestamp = item.user_data.delivery_date | date: '%s', 'UTC' %}
+{% if delivery_date_timestamp > now %}
+  {% assign delivery_date = item.user_data.delivery_date %}
+{% endif %}
+
+{% if is_preview %}
+  {% assign is_disabled = false %}
+{% elsif item.user_data.expired or delivery_date %}
+  {% assign is_disabled = true %}
+{% else %}
+  {% unless is_purchasable %}
+    {% if visible == false or content_count == 0 %}
+      {% assign is_disabled = true %}
+    {% else %}
+      {% assign is_disabled = false %}
+    {% endif %}
+  {% else %}
+    {% assign is_disabled = false %}
+  {% endunless %}
+{% endif %}
+
+{% assign tooltip_text = '' %}
+{% assign status_text = '' %}
+{% if item.user_data.expired %}
+  {% assign tooltip_text = 'content.expired' | t %}
+  {% assign status_text = 'content.expired_short' | t %}
+{% elsif delivery_date %}
+  {% assign delivery_date_formatted = delivery_date | date: '%d/%m/%Y', 'UTC' %}
+  {% assign tooltip_text = 'content.upcoming' | t: date: delivery_date_formatted %}
+  {% assign status_text = 'content.upcoming_short' | t %}
+{% elsif is_disabled %}
+  {% assign tooltip_text = 'content.locked' | t %}
+  {% assign status_text = 'content.locked_short' | t %}
+{% elsif progress >= 100 %}
+  {% assign status_text = 'content.completed' | t %}
+{% elsif progress > 0 %}
+  {% assign status_text = 'content.in_progress' | t %}
+{% else %}
+  {% assign status_text = 'content.not_started' | t %}
+{% endif %}
+
+{% if is_preview %}
+  {% assign router_path = '#' %}
+{% else %}
+  {% assign router_path = path_format | default: '/{id}' %}
+  {% if item.course_id %}
+    {% assign router_path = router_path | replace: '{course_id}', item.course_id %}
+  {% endif %}
+  {% if item.module_id %}
+    {% assign router_path = router_path | replace: '{module_id}', item.module_id %}
+  {% endif %}
+  {% if item.module_id and is_purchasable %}
+    {% assign router_path = router_path | replace: '{id}', '' %}
+  {% else %}
+    {% assign router_path = router_path | replace: '{id}', item.id %}
+  {% endif %}
+{% endif %}
+
+{% assign item_name_downcase = item.name | downcase %}
+{% assign inferred_badge = section.settings.format_label %}
+{% assign card_accent = section.settings.accent | default: 'blue' %}
+{% assign card_extra_class = '' %}
+
+{% if section.type == 'courses' %}
+  {% if item_name_downcase contains 'nw cast' or item_name_downcase contains 'nwcast' %}
+    {% assign inferred_badge = 'catalog.badges.podcast' | t %}
+    {% assign card_accent = 'magenta' %}
+  {% elsif item_name_downcase contains 'comfort place' %}
+    {% assign inferred_badge = 'catalog.badges.community' | t %}
+    {% assign card_accent = 'cyan' %}
+    {% assign card_extra_class = 'nw-card--community' %}
+  {% elsif item_name_downcase contains 'estude' %}
+    {% assign inferred_badge = 'catalog.badges.ebook' | t %}
+    {% assign card_accent = 'slate' %}
+    {% assign card_extra_class = 'nw-card--estude' %}
+  {% elsif item_name_downcase contains 'análise' or item_name_downcase contains 'analise' %}
+    {% assign inferred_badge = 'catalog.badges.science' | t %}
+    {% assign card_accent = 'violet' %}
+  {% elsif item_name_downcase contains 'aulas gravadas' or item_name_downcase contains 'encontros' %}
+    {% assign inferred_badge = 'catalog.badges.meetings' | t %}
+    {% assign card_accent = 'amber' %}
+  {% else %}
+    {% assign inferred_badge = 'catalog.badges.area' | t %}
+  {% endif %}
+{% endif %}
+
+{% assign wrapper_tag = 'a' %}
+{% assign wrapper_attrs = '' %}
+{% if is_disabled %}
+  {% assign wrapper_tag = 'div' %}
+{% elsif external_link != blank and visible == false %}
+  {% assign wrapper_attrs = 'href="' | append: external_link | append: '" target="_blank" rel="noopener noreferrer"' %}
+{% else %}
+  {% assign wrapper_attrs = 'href="' | append: router_path | append: '" data-kiwi-router-link="' | append: router_path | append: '"' %}
+{% endif %}
+
+<article
+  class="embla__slide nw-card{% if is_horizontal %} nw-card--horizontal{% endif %}{% if is_disabled %} nw-card--disabled{% endif %}{% if progress >= 100 %} nw-card--completed{% endif %} {{ card_extra_class }}"
+  data-nw-card-accent="{{ card_accent }}"
+  {% if tooltip_text != blank %}aria-label="{{ tooltip_text }}"{% endif %}
+>
+  <{{ wrapper_tag }}
+    class="nw-card__surface"
+    {% if wrapper_attrs != blank %}{{ wrapper_attrs }}{% endif %}
+    {% if is_disabled %}aria-disabled="true"{% endif %}
+  >
+    <div class="nw-card__media">
+      {% if image_url != blank %}
+        {% render 'image',
+          src: image_url,
+          width: image_width,
+          height: image_height,
+          fit: 'contain',
+          class: 'nw-card__image',
+          wrapper_json: '{"class":"nw-card__image-wrapper"}'
+        %}
+      {% else %}
+        <div class="nw-card__fallback" aria-hidden="true">
+          <div class="nw-card__fallback-mark">
+            <span class="nw-card__fallback-logo">NW</span>
+            <span class="nw-card__fallback-text">{% if inferred_badge != blank %}{{ inferred_badge }}{% else %}{{ 'catalog.badges.content' | t }}{% endif %}</span>
+          </div>
+        </div>
+      {% endif %}
+
+      {% if inferred_badge != blank or section.settings.category_label != blank %}
+        <div class="nw-card__badges">
+          {% if inferred_badge != blank %}
+            <span class="nw-badge">{{ inferred_badge }}</span>
+          {% endif %}
+          {% if section.settings.category_label != blank %}
+            <span class="nw-badge">{{ section.settings.category_label }}</span>
+          {% endif %}
+        </div>
+      {% endif %}
+
+      {% if item.user_data.expired or delivery_date or is_purchasable or external_link != blank and visible == false %}
+        <span class="nw-card__status-icon" aria-hidden="true">
+          {% if item.user_data.expired or delivery_date %}
+            <svg width="1.1em" height="1.1em" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"></path>
+            </svg>
+          {% elsif external_link != blank and visible == false %}
+            <svg width="1.1em" height="1.1em" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 4h6m0 0v6m0-6L10 14M5 6h5M5 6a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-5"></path>
+            </svg>
+          {% else %}
+            <svg width="1.1em" height="1.1em" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 1.5a5.25 5.25 0 0 0-5.25 5.25v3a3 3 0 0 0-3 3v6.75a3 3 0 0 0 3 3h10.5a3 3 0 0 0 3-3v-6.75a3 3 0 0 0-3-3v-3A5.25 5.25 0 0 0 12 1.5Zm-1.5 5.25a1.5 1.5 0 1 1 3 0v3h-3v-3Z"></path>
+            </svg>
+          {% endif %}
+        </span>
+      {% endif %}
+
+      {% if is_preview and source == 'theme-editor' %}
+        <button
+          type="button"
+          class="absolute z-20 right-3 bottom-3 rounded-full bg-black/70 text-white p-2"
+          data-kiwi-editor-event='{"name":"manageCover","type":"{{ section.type }}","id":"{{ item.id }}"}'
+          aria-label="{{ 'content.manage_cover' | t }}"
+        >
+          <svg width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M21.731 2.269a2.625 2.625 0 0 0-3.712 0l-1.157 1.157 3.712 3.712 1.157-1.157a2.625 2.625 0 0 0 0-3.712M19.513 8.2l-3.712-3.712-8.4 8.4a5.25 5.25 0 0 0-1.32 2.214l-.8 2.685a.75.75 0 0 0 .933.933l2.685-.8a5.25 5.25 0 0 0 2.214-1.32z"></path>
+            <path d="M5.25 5.25a3 3 0 0 0-3 3v10.5a3 3 0 0 0 3 3h10.5a3 3 0 0 0 3-3V13.5a.75.75 0 0 0-1.5 0v5.25a1.5 1.5 0 0 1-1.5 1.5H5.25a1.5 1.5 0 0 1-1.5-1.5V8.25a1.5 1.5 0 0 1 1.5-1.5h5.25a.75.75 0 0 0 0-1.5z"></path>
+          </svg>
+        </button>
+      {% endif %}
+    </div>
+
+    <div class="nw-card__body">
+      <h3 class="nw-card__title">{{ item.name }}</h3>
+
+      <div class="nw-card__meta">
+        {% if content_count != blank and section.settings.show_content_count %}
+          <span>{{ 'content.count' | t: count: content_count }}</span>
+        {% endif %}
+        {% if status_text != blank %}
+          <span>{{ status_text }}</span>
+        {% endif %}
+        {% if external_link != blank and visible == false %}
+          <span>{{ 'content.external_link' | t }}</span>
+        {% endif %}
+      </div>
+
+      {% if is_disabled == false and should_display_progress %}
+        <div class="nw-card__progress">
+          <div class="nw-card__progress-row">
+            <span>{{ status_text }}</span>
+            <span>{{ progress }}%</span>
+          </div>
+          <progress max="100" value="{{ progress }}" aria-label="{{ 'content.progress' | t: progress: progress }}">
+            {{ progress }}%
+          </progress>
+        </div>
+      {% endif %}
+    </div>
+  </{{ wrapper_tag }}>
+</article>

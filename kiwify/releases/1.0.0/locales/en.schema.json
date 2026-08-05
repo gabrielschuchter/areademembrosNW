@@ -1,0 +1,154 @@
+{
+  "sections": {
+    "common": {
+      "eyebrow": {
+        "label": "Upper label",
+        "placeholder": "Example: NUTRITION AREA"
+      },
+      "description": {
+        "label": "Section description",
+        "placeholder": "Explain the purpose of this row in one sentence."
+      },
+      "visual_style": {
+        "label": "Visual style",
+        "default": "Default",
+        "featured": "Featured",
+        "catalog_main": "Main catalog",
+        "extras": "Your extras"
+      },
+      "accent": {
+        "label": "Accent color",
+        "indigo": "Indigo",
+        "blue": "Blue",
+        "cyan": "Cyan",
+        "teal": "Teal",
+        "violet": "Violet",
+        "orange": "Orange",
+        "green": "Green",
+        "amber": "Amber",
+        "magenta": "Magenta",
+        "slate": "Slate"
+      },
+      "format_label": {
+        "label": "Format label"
+      },
+      "category_label": {
+        "label": "Category label"
+      },
+      "show_content_count": "Show content count"
+    },
+    "login": {
+      "section_title": "Login",
+      "layout": {
+        "label": "Layout",
+        "sidebar": "Sidebar",
+        "background": "Full screen"
+      },
+      "image_background": {
+        "label": "Background image",
+        "info": "Recommended size: 1920x1080 pixels"
+      },
+      "image_header": {
+        "label": "Logo",
+        "info": "Recommended size: 720x128 pixels"
+      }
+    },
+    "courses": {
+      "section_title": "Courses",
+      "title": {
+        "label": "Section title",
+        "placeholder": "Your section title"
+      },
+      "items_variant": {
+        "label": "Course name display",
+        "content_over": "Always visible",
+        "content_hidden": "Hidden",
+        "mouse_hover": "On mouse hover"
+      },
+      "items_layout": {
+        "label": "Items layout",
+        "portrait": "Portrait",
+        "landscape": "Landscape"
+      },
+      "course_id": {
+        "label": "Course",
+        "placeholder": "Enter the name of your course…"
+      },
+      "all_accessible_courses": {
+        "label": "Show all courses the student has access to"
+      }
+    },
+    "modules": {
+      "section_title": "Modules",
+      "title": {
+        "label": "Section title",
+        "placeholder": "Your section title"
+      },
+      "items_variant": {
+        "label": "Module name display",
+        "content_over": "Always visible",
+        "content_hidden": "Hidden",
+        "mouse_hover": "On mouse hover"
+      },
+      "items_layout": {
+        "label": "Items layout",
+        "portrait": "Portrait",
+        "landscape": "Landscape"
+      },
+      "course_id": {
+        "label": "Course",
+        "placeholder": "Enter the name of your course…"
+      },
+      "show_welcome_box": "Show welcome box",
+      "welcome_label": "Welcome box label",
+      "welcome_title": "Welcome box title",
+      "welcome_text": "Welcome box text",
+      "welcome_hint": "Welcome box final guidance"
+    },
+    "lessons": {
+      "section_title": "Lessons",
+      "title": {
+        "label": "Section title",
+        "placeholder": "Your section title"
+      },
+      "items_variant": {
+        "label": "Lesson name display",
+        "content_over": "Always visible",
+        "content_hidden": "Hidden",
+        "mouse_hover": "On mouse hover"
+      },
+      "items_layout": {
+        "label": "Items layout",
+        "portrait": "Portrait",
+        "landscape": "Landscape"
+      },
+      "module_id": {
+        "label": "Module",
+        "placeholder": "Select a module…"
+      },
+      "show_support_footer": "Show support after this row",
+      "support_whatsapp": "Support WhatsApp link",
+      "support_email": "Support email"
+    },
+    "continue_watching": {
+      "section_title": "Continue watching",
+      "items_variant": {
+        "label": "Content title display",
+        "content_over": "Always visible",
+        "content_hidden": "Hidden",
+        "mouse_hover": "On mouse hover"
+      }
+    },
+    "banner": {
+      "title": "Banner",
+      "slide": "Slide",
+      "slides_delay": "Time between slides",
+      "banner_type": "Slide type",
+      "image": "Image",
+      "mobile_image": "Mobile image",
+      "desktop_image": "Desktop image",
+      "alt_text": "Image alternative text",
+      "alt_text_placeholder": "Describe the banner's main information"
+    }
+  }
+}

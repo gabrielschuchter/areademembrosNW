@@ -1,0 +1,51 @@
+{% if section_items.size > 0 or is_preview %}
+  <div class="nw-cards">
+    <div
+      class="embla nw-carousel"
+      data-embla-options='{ "loop": false, "dragFree": true }'
+      aria-labelledby="section__{{ section.id }}__title"
+    >
+      <div id="section__{{ section.id }}__items" class="embla__viewport nw-carousel__viewport">
+        <div class="embla__container nw-carousel__container">
+          {% for item in section_items %}
+            {% render 'cards-item',
+              item: item,
+              is_horizontal: is_horizontal,
+              percentage_field: percentage_field,
+              path_format: path_format,
+              section: section,
+              should_display_progress: should_display_progress,
+              is_preview: is_preview,
+              source: source
+            %}
+          {% endfor %}
+        </div>
+      </div>
+
+      {% if section_items.size > 1 %}
+        <button
+          type="button"
+          data-embla-prev
+          class="embla__button embla__button--prev nw-carousel__button nw-carousel__button--prev"
+          aria-label="{{ 'carousel.previous' | t }}"
+          aria-controls="section__{{ section.id }}__items"
+        >
+          <svg aria-hidden="true" width="1em" height="1em" viewBox="0 0 16 16">
+            <path fill="currentColor" fill-rule="evenodd" d="M9.78 4.22a.75.75 0 0 1 0 1.06L7.06 8l2.72 2.72a.75.75 0 1 1-1.06 1.06L5.47 8.53a.75.75 0 0 1 0-1.06l3.25-3.25a.75.75 0 0 1 1.06 0" clip-rule="evenodd"></path>
+          </svg>
+        </button>
+        <button
+          type="button"
+          data-embla-next
+          class="embla__button embla__button--next nw-carousel__button nw-carousel__button--next"
+          aria-label="{{ 'carousel.next' | t }}"
+          aria-controls="section__{{ section.id }}__items"
+        >
+          <svg aria-hidden="true" width="1em" height="1em" viewBox="0 0 16 16">
+            <path fill="currentColor" fill-rule="evenodd" d="M6.22 4.22a.75.75 0 0 1 1.06 0l3.25 3.25a.75.75 0 0 1 0 1.06l-3.25 3.25a.75.75 0 0 1-1.06-1.06L8.94 8 6.22 5.28a.75.75 0 0 1 0-1.06" clip-rule="evenodd"></path>
+          </svg>
+        </button>
+      {% endif %}
+    </div>
+  </div>
+{% endif %}

@@ -1,10 +1,11 @@
 {
   "name": "areademembros-nutriwork",
   "private": true,
-  "version": "0.1.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "validate": "node scripts/validate.mjs",
+    "validate:baseline": "node scripts/validate.mjs --target kiwify/current",
     "validate:templates": "node scripts/validate-templates.mjs",
     "validate:locales": "node scripts/validate-locales.mjs"
   }

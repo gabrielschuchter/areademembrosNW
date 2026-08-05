@@ -1,0 +1,92 @@
+{% assign variant = section.settings.variant %}
+{% assign image_header = section.settings.image_header | default: club.logo %}
+{% if club.kind == 'lite' %}
+  {% assign variant = 'background' %}
+{% endif %}
+
+<section class="nw-login flex w-full {% if variant == 'sidebar' %}flex-col md:flex-row{% else %}items-center justify-center{% endif %}">
+  <div class="nw-login__panel {% if variant == 'sidebar' %}md:min-w-[30rem] md:max-w-[30rem]{% endif %}">
+    <div class="nw-login__intro">
+      <p class="nw-login__eyebrow">{{ 'login.eyebrow' | t }}</p>
+      <h1 class="nw-login__title">{{ 'login.heading' | t }}</h1>
+      <p class="nw-login__text">{{ 'login.description' | t }}</p>
+    </div>
+
+    <div class="nw-login__card">
+      <div class="nw-login__logo">
+        {% if club.kind != 'lite' and image_header %}
+          {% render 'image', src: image_header, preload: true, fadeIn: true, width: 720, height: 128, fit: 'contain', class: 'block w-full max-h-24 object-contain' %}
+        {% else %}
+          <h2 class="font-semibold text-2xl">{{ club.name }}</h2>
+        {% endif %}
+      </div>
+
+      {% render 'auth-button' %}
+
+      <p class="nw-login__support">
+        {{ 'login.support_intro' | t }}
+        <a href="mailto:equipenutriwork@gmail.com">equipenutriwork@gmail.com</a>
+      </p>
+    </div>
+  </div>
+
+  {% if variant == 'sidebar' and club.kind != 'lite' %}
+    <div class="hidden md:flex flex-1 min-h-screen">
+      {% if section.settings.image_background %}
+        {% render 'image', src: section.settings.image_background, fit: 'cover', class: 'w-screen min-h-screen object-cover', preload: true, fadeIn: true, width: 1920, height: 1080, format: 'avif' %}
+      {% endif %}
+    </div>
+  {% elsif variant == 'background' and section.settings.image_background and club.kind != 'lite' %}
+    {% render 'image', src: section.settings.image_background, fit: 'cover', class: 'w-screen h-svh object-cover opacity-35', preload: true, fadeIn: true, width: 1920, height: 1080, format: 'avif', wrapper_json: '{"class":["fixed","inset-0","-z-10"]}' %}
+  {% endif %}
+</section>
+
+{% schema %}
+{
+  "name": "t:sections.login.section_title",
+  "enabled_on": {
+    "templates": [
+      "login"
+    ]
+  },
+  "settings": [
+    {
+      "type": "select",
+      "id": "variant",
+      "label": "t:sections.login.layout.label",
+      "options": [
+        {
+          "value": "sidebar",
+          "label": "t:sections.login.layout.sidebar",
+          "kiwi_extra": {
+            "icon": "fa fa-columns"
+          }
+        },
+        {
+          "value": "background",
+          "label": "t:sections.login.layout.background",
+          "kiwi_extra": {
+            "icon": "fa fa-window-maximize"
+          }
+        }
+      ],
+      "kiwi_extra": {
+        "labeled": true
+      },
+      "default": "background"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_background",
+      "label": "t:sections.login.image_background.label",
+      "info": "t:sections.login.image_background.info"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_header",
+      "label": "t:sections.login.image_header.label",
+      "info": "t:sections.login.image_header.info"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,62 @@
+{
+  "login": {
+    "title": "Acceso al área de miembros",
+    "eyebrow": "NUTRIWORK+",
+    "heading": "Entra en Nutriwork+",
+    "description": "Accede a tus módulos, contenidos extra, comunidad y recursos de estudio.",
+    "support_intro": "¿Problemas para entrar? Habla con el equipo:"
+  },
+  "content": {
+    "expired": "Este contenido ha expirado",
+    "expired_short": "Acceso expirado",
+    "upcoming": "Disponible el {{date}}",
+    "upcoming_short": "Disponible pronto",
+    "locked": "Contenido no disponible",
+    "locked_short": "Contenido bloqueado",
+    "not_started": "No iniciado",
+    "in_progress": "En progreso",
+    "completed": "Completado",
+    "count": "{{count}} contenidos",
+    "external_link": "Enlace externo",
+    "progress": "{{progress}}% completado",
+    "manage_cover": "Gestionar portada"
+  },
+  "continue_watching": {
+    "eyebrow": "RETOMA TUS ESTUDIOS",
+    "title": "Seguir viendo",
+    "description": "Continúa donde lo dejaste y acompaña tu progreso.",
+    "fake_lesson": "Mi primera lección"
+  },
+  "welcome": {
+    "label": "PRIMER ACCESO",
+    "title": "Bienvenido a Nutriwork+",
+    "text": "Explora los módulos, acompaña tu progreso y avanza a tu ritmo mediante una formación en Nutrición basada en evidencias.",
+    "hint": "Empieza por los contenidos de bienvenida y conoce todos los recursos disponibles."
+  },
+  "carousel": {
+    "previous": "Contenidos anteriores",
+    "next": "Próximos contenidos"
+  },
+  "banner": {
+    "region_label": "Destacados de Nutriwork+",
+    "pagination": "Navegación de destacados",
+    "go_to_slide": "Ir al destacado {{number}}"
+  },
+  "catalog": {
+    "badges": {
+      "area": "Área de Nutrición",
+      "meetings": "Encuentros",
+      "science": "Ciencia",
+      "podcast": "Podcast",
+      "community": "Comunidad",
+      "ebook": "E-book",
+      "content": "Contenido"
+    }
+  },
+  "support": {
+    "title": "¿Necesitas ayuda?",
+    "text": "Habla con el equipo Nutriwork para resolver problemas de acceso, dudas sobre contenidos y cuestiones de la comunidad.",
+    "whatsapp": "Hablar por WhatsApp",
+    "email": "Enviar correo"
+  }
+}

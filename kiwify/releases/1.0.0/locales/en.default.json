@@ -1,0 +1,62 @@
+{
+  "login": {
+    "title": "Access members area",
+    "eyebrow": "NUTRIWORK+",
+    "heading": "Sign in to Nutriwork+",
+    "description": "Access your modules, extra content, community and study resources.",
+    "support_intro": "Having trouble signing in? Contact the team:"
+  },
+  "content": {
+    "expired": "This content has expired",
+    "expired_short": "Access expired",
+    "upcoming": "Available on {{date}}",
+    "upcoming_short": "Available soon",
+    "locked": "Content not available",
+    "locked_short": "Locked content",
+    "not_started": "Not started",
+    "in_progress": "In progress",
+    "completed": "Completed",
+    "count": "{{count}} contents",
+    "external_link": "External link",
+    "progress": "{{progress}}% completed",
+    "manage_cover": "Manage cover"
+  },
+  "continue_watching": {
+    "eyebrow": "RESUME YOUR STUDIES",
+    "title": "Continue watching",
+    "description": "Continue where you left off and track your progress.",
+    "fake_lesson": "My first lesson"
+  },
+  "welcome": {
+    "label": "FIRST ACCESS",
+    "title": "Welcome to Nutriwork+",
+    "text": "Explore the modules, track your progress and learn at your own pace through evidence-based Nutrition education.",
+    "hint": "Start with the welcome content below and learn about all available resources."
+  },
+  "carousel": {
+    "previous": "Previous content",
+    "next": "Next content"
+  },
+  "banner": {
+    "region_label": "Nutriwork+ highlights",
+    "pagination": "Highlights navigation",
+    "go_to_slide": "Go to highlight {{number}}"
+  },
+  "catalog": {
+    "badges": {
+      "area": "Nutrition area",
+      "meetings": "Meetings",
+      "science": "Science",
+      "podcast": "Podcast",
+      "community": "Community",
+      "ebook": "E-book",
+      "content": "Content"
+    }
+  },
+  "support": {
+    "title": "Need help?",
+    "text": "Contact the Nutriwork team about access issues, content questions and community support.",
+    "whatsapp": "Contact on WhatsApp",
+    "email": "Send email"
+  }
+}

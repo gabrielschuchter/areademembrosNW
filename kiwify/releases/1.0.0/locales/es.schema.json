@@ -1,0 +1,154 @@
+{
+  "sections": {
+    "common": {
+      "eyebrow": {
+        "label": "Etiqueta superior",
+        "placeholder": "Ej.: ÁREA DE NUTRICIÓN"
+      },
+      "description": {
+        "label": "Descripción de la sección",
+        "placeholder": "Explica el objetivo de esta fila en una frase."
+      },
+      "visual_style": {
+        "label": "Estilo visual",
+        "default": "Estándar",
+        "featured": "Destacado",
+        "catalog_main": "Catálogo principal",
+        "extras": "Tus extras"
+      },
+      "accent": {
+        "label": "Color de acento",
+        "indigo": "Índigo",
+        "blue": "Azul",
+        "cyan": "Cian",
+        "teal": "Verde azulado",
+        "violet": "Violeta",
+        "orange": "Naranja",
+        "green": "Verde",
+        "amber": "Ámbar",
+        "magenta": "Magenta",
+        "slate": "Gris azulado"
+      },
+      "format_label": {
+        "label": "Etiqueta de formato"
+      },
+      "category_label": {
+        "label": "Etiqueta de categoría"
+      },
+      "show_content_count": "Mostrar cantidad de contenidos"
+    },
+    "login": {
+      "section_title": "Login",
+      "layout": {
+        "label": "Layout",
+        "sidebar": "Barra lateral",
+        "background": "Pantalla completa"
+      },
+      "image_background": {
+        "label": "Imagen de fondo",
+        "info": "Tamaño recomendado: 1920x1080 píxeles"
+      },
+      "image_header": {
+        "label": "Logo",
+        "info": "Tamaño recomendado: 720x128 píxeles"
+      }
+    },
+    "courses": {
+      "section_title": "Cursos",
+      "title": {
+        "label": "Título de sección",
+        "placeholder": "Aquí está el título de tu sección"
+      },
+      "items_variant": {
+        "label": "Visualización del nombre del curso",
+        "content_over": "Siempre visible",
+        "content_hidden": "Oculto",
+        "mouse_hover": "Al pasar el mouse"
+      },
+      "items_layout": {
+        "label": "Layout de los contenidos",
+        "portrait": "Vertical",
+        "landscape": "Horizontal"
+      },
+      "course_id": {
+        "label": "Curso",
+        "placeholder": "Digite el nombre de su curso…"
+      },
+      "all_accessible_courses": {
+        "label": "Mostrar todos los cursos que el alumno tenga acceso"
+      }
+    },
+    "modules": {
+      "section_title": "Módulos",
+      "title": {
+        "label": "Título de sección",
+        "placeholder": "Aquí está el título de tu sección"
+      },
+      "items_variant": {
+        "label": "Visualización del nombre del módulo",
+        "content_over": "Siempre visible",
+        "content_hidden": "Oculto",
+        "mouse_hover": "Al pasar el mouse"
+      },
+      "items_layout": {
+        "label": "Layout de los contenidos",
+        "portrait": "Vertical",
+        "landscape": "Horizontal"
+      },
+      "course_id": {
+        "label": "Curso",
+        "placeholder": "Digite el nombre de su curso…"
+      },
+      "show_welcome_box": "Mostrar caja de bienvenida",
+      "welcome_label": "Etiqueta de la caja de bienvenida",
+      "welcome_title": "Título de la caja de bienvenida",
+      "welcome_text": "Texto de la caja de bienvenida",
+      "welcome_hint": "Orientación final de la caja de bienvenida"
+    },
+    "lessons": {
+      "section_title": "Aulas",
+      "title": {
+        "label": "Título de sección",
+        "placeholder": "Aquí está el título de tu sección"
+      },
+      "items_variant": {
+        "label": "Visualización del nombre del aula",
+        "content_over": "Siempre visible",
+        "content_hidden": "Oculto",
+        "mouse_hover": "Al pasar el mouse"
+      },
+      "items_layout": {
+        "label": "Layout de los contenidos",
+        "portrait": "Vertical",
+        "landscape": "Horizontal"
+      },
+      "module_id": {
+        "label": "Módulo",
+        "placeholder": "Seleccione un módulo…"
+      },
+      "show_support_footer": "Mostrar soporte después de esta fila",
+      "support_whatsapp": "Enlace de WhatsApp de soporte",
+      "support_email": "Correo de soporte"
+    },
+    "continue_watching": {
+      "section_title": "Continuar viendo",
+      "items_variant": {
+        "label": "Visualización del título del contenido",
+        "content_over": "Siempre visible",
+        "content_hidden": "Oculto",
+        "mouse_hover": "Al pasar el mouse"
+      }
+    },
+    "banner": {
+      "title": "Banner",
+      "slide": "Diapositiva",
+      "slides_delay": "Tiempo de transición entre diapositivas",
+      "banner_type": "Tipo de diapositiva",
+      "image": "Imagen",
+      "mobile_image": "Imagen Mobile",
+      "desktop_image": "Imagen Desktop",
+      "alt_text": "Texto alternativo de la imagen",
+      "alt_text_placeholder": "Describe la información principal del banner"
+    }
+  }
+}

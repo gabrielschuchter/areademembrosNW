@@ -1,13 +1,27 @@
 # Releases
 
-Nenhuma release de personalização foi publicada a partir deste repositório ainda.
+## 1.0.0 — candidata pronta
 
-Cada release deve conter:
+Local: [`kiwify/releases/1.0.0/`](1.0.0/)
 
-- cópia completa de todos os arquivos afetados;
+Conteúdo:
+
+- 19 arquivos completos;
+- `README.md` da release;
 - `MANIFEST.md` com ordem de colagem;
-- `CHECKLIST.md` preenchido;
-- diff contra a versão anterior;
-- data/hora de publicação;
-- responsável;
-- resultado observado e instruções de rollback.
+- `CHECKLIST.md` para publicação e QA;
+- template principal com 25 seções;
+- estrutura visível preservada;
+- código validado localmente.
+
+Estado:
+
+- [x] código preparado;
+- [x] validação local;
+- [x] documentação de implementação;
+- [ ] colagem na Kiwify;
+- [ ] QA no navegador;
+- [ ] QA no aplicativo;
+- [ ] confirmação de publicação.
+
+A release só deve ser marcada como publicada depois que o checklist estiver preenchido e as diferenças navegador × aplicativo estiverem registradas.
