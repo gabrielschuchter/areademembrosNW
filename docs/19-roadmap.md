@@ -32,7 +32,7 @@ A estrutura e a ordem das fileiras visíveis da área de membros serão preserva
 ## Release 0.4.0 — Catálogo detalhado
 
 - [ ] valorizar “Todos os módulos” como vitrine principal;
-- [ ] diferenciar módulos acadêmicos, encontros, podcast, análise, comunidade e Studio;
+- [ ] diferenciar módulos acadêmicos, encontros, podcast, análise, comunidade e **ESTUDE!**, identificado como e-book de organização de estudos;
 - [ ] destacar “Seus extras” sem alterar sua posição ou lógica de acesso;
 - [ ] padronizar títulos das fileiras por área e formato;
 - [ ] adicionar eyebrow, subtítulo e rótulo de formato às seções;
