@@ -1,0 +1,16 @@
+{% assign variant = section.settings.variant %}
+{% assign image_header = section.settings.image_header | default: club.logo %}
+{% if club.kind == 'lite' %}{% assign variant = 'background' %}{% endif %}
+<section class="flex-1 flex w-full min-h-screen {% if variant == 'background' %}flex-col items-center justify-center {% if section.settings.image_background and club.kind != 'lite' %}text-white bg-black/50{% endif %}{% endif %} {% if variant == 'sidebar' %}flex-col sm:flex-row sm:items-stretch sm:justify-stretch{% endif %}">
+  <div class="flex flex-col items-stretch justify-center text-center gap-12 px-4 {% if variant == 'background' %} mx-auto w-full {% endif %} {% if variant == 'sidebar' %}flex-1 sm:flex-auto z-10 relative w-full md:min-w-[28rem] md:max-w-[28rem] lg:min-w-[36rem] lg:max-w-[36rem] sm:shadow-lg bg-gray-50 dark:bg-gray-800 py-12 sm:px-8{% endif %}">
+    <h2 class="font-extrabold text-2xl leading-8">{{ 'login.title' | t }}</h2>
+    <div class="flex flex-col items-stretch justify-center bg-white text-black dark:bg-gray-900 dark:text-white rounded-lg shadow pt-6 sm:pt-10 pb-8 sm:pb-10 gap-4 sm:gap-6 mx-auto w-full {% if variant == 'background' or variant == 'sidebar' %} sm:max-w-[22.5rem] {% endif %}">
+      {% if club.kind != 'lite' %}{% if image_header %}{% render 'image', src: image_header, preload: true, fadeIn: true, width: 720, height: 128, fit: 'cover', class: 'block w-full mx-auto' %}{% else %}<h1 class="font-normal text-2xl px-4 min-h-16 flex flex-col items-stretch justify-center">{{ club.name }}</h1>{% endif %}{% else %}<h1 class="font-normal text-2xl px-4 min-h-16 flex flex-col items-stretch justify-center">{{ club.name }}</h1>{% endif %}
+      {% render 'auth-button' %}
+    </div>
+  </div>
+  {% if variant == 'sidebar' and club.kind != 'lite' %}<div class="hidden md:flex flex-1 bg-primary-500 dark:bg-primary-800">{% if section.settings.image_background %}{% render 'image', src: section.settings.image_background, fit: 'cover', class: 'w-screen h-svh object-cover', preload: true, fadeIn: true, width: 1920, height: 1080, format: 'avif' %}{% endif %}</div>{% elsif variant == 'background' and section.settings.image_background and club.kind != 'lite' %}<div>{% render 'image', src: section.settings.image_background, fit: 'cover', class: 'w-screen h-svh object-cover', preload: true, fadeIn: true, width: 1920, height: 1080, format: 'avif', wrapper_json: '{"class":["fixed","inset-0","-z-10"]}' %}</div>{% endif %}
+</section>
+{% schema %}
+{"name":"t:sections.login.section_title","enabled_on":{"templates":["login"]},"settings":[{"type":"select","id":"variant","label":"t:sections.login.layout.label","options":[{"value":"sidebar","label":"t:sections.login.layout.sidebar","kiwi_extra":{"icon":"fa fa-columns"}},{"value":"background","label":"t:sections.login.layout.background","kiwi_extra":{"icon":"fa fa-window-maximize"}}],"kiwi_extra":{"labeled":true},"default":"background"},{"type":"image_picker","id":"image_background","label":"t:sections.login.image_background.label","info":"t:sections.login.image_background.info"},{"type":"image_picker","id":"image_header","label":"t:sections.login.image_header.label","info":"t:sections.login.image_header.info"}]}
+{% endschema %}

@@ -1,0 +1,107 @@
+{
+  "sections": {
+    "login": {
+      "section_title": "Login",
+      "layout": {
+        "label": "Layout",
+        "sidebar": "Barra lateral",
+        "background": "Toda a tela"
+      },
+      "image_background": {
+        "label": "Imagem de fundo",
+        "info": "Tamanho recomendado: 1920x1080 pixels"
+      },
+      "image_header": {
+        "label": "Logo",
+        "info": "Tamanho recomendado: 720x128 pixels"
+      }
+    },
+    "courses": {
+      "section_title": "Cursos",
+      "title": {
+        "label": "Título da seção",
+        "placeholder": "Aqui vai o título da seção"
+      },
+      "items_variant": {
+        "label": "Exibição do nome do curso",
+        "content_over": "Sempre visível",
+        "content_hidden": "Escondido",
+        "mouse_hover": "Ao passar o mouse"
+      },
+      "items_layout": {
+        "label": "Layout dos conteúdos",
+        "portrait": "Vertical",
+        "landscape": "Horizontal"
+      },
+      "course_id": {
+        "label": "Curso",
+        "placeholder": "Digite o nome do seu curso…"
+      },
+      "all_accessible_courses": {
+        "label": "Exibir todos os cursos que o aluno tiver acesso"
+      }
+    },
+    "modules": {
+      "section_title": "Módulos",
+      "title": {
+        "label": "Título da seção",
+        "placeholder": "Aqui vai o título da seção"
+      },
+      "items_variant": {
+        "label": "Exibição do nome do módulo",
+        "content_over": "Sempre visível",
+        "content_hidden": "Escondido",
+        "mouse_hover": "Ao passar o mouse"
+      },
+      "items_layout": {
+        "label": "Layout dos conteúdos",
+        "portrait": "Vertical",
+        "landscape": "Horizontal"
+      },
+      "course_id": {
+        "label": "Curso",
+        "placeholder": "Digite o nome do seu curso…"
+      }
+    },
+    "lessons": {
+      "section_title": "Aulas",
+      "title": {
+        "label": "Título da seção",
+        "placeholder": "Aqui vai o título da seção"
+      },
+      "items_variant": {
+        "label": "Exibição do nome da aula",
+        "content_over": "Sempre visível",
+        "content_hidden": "Escondido",
+        "mouse_hover": "Ao passar o mouse"
+      },
+      "items_layout": {
+        "label": "Layout dos conteúdos",
+        "portrait": "Vertical",
+        "landscape": "Horizontal"
+      },
+      "module_id": {
+        "label": "Módulo",
+        "placeholder": "Selecione um módulo…"
+      }
+    },
+    "continue_watching": {
+      "section_title": "Continuar assistindo",
+      "items_variant": {
+        "label": "Exibição do título do conteúdo",
+        "content_over": "Sempre visível",
+        "content_hidden": "Escondido",
+        "mouse_hover": "Ao passar o mouse"
+      }
+    },
+    "banner": {
+      "title": "Banner",
+      "slide": "Slide",
+      "slides_delay": "Tempo de transição entre slides",
+      "banner_type": "Tipo de slide",
+      "image": "Imagem",
+      "mobile_image": "Imagem Mobile",
+      "desktop_image": "Imagem Desktop"
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "axes": {
+    "domain": [
+      "Introdução à Nutrição",
+      "Nutrição Baseada em Evidências",
+      "Nutrição Clínica",
+      "Nutrição Esportiva",
+      "Nutrição Comportamental",
+      "Bioquímica da Nutrição",
+      "Fisiologia Humana",
+      "Nutrição Materno-infantil",
+      "Saúde Coletiva"
+    ],
+    "format": [
+      "aula",
+      "e-book",
+      "podcast",
+      "análise de artigo",
+      "encontro gravado",
+      "quiz/banco de questões",
+      "recurso"
+    ],
+    "journey": [
+      "comece por aqui",
+      "fundamentos",
+      "aplicação",
+      "revisão",
+      "aprofundamento",
+      "complementar"
+    ],
+    "status": [
+      "não iniciado",
+      "em andamento",
+      "concluído",
+      "bloqueado",
+      "liberação futura",
+      "expirado",
+      "disponível para compra"
+    ]
+  },
+  "rule": "A home deve priorizar jornada e intenção do aluno; formato é eixo secundário, não a arquitetura principal."
+}

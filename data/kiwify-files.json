@@ -1,0 +1,38 @@
+{
+  "mode": "fixed-file",
+  "verified_at": "2026-08-05",
+  "files": {
+    "sections": [
+      "banner.liquid",
+      "login.liquid",
+      "modules.liquid",
+      "courses.liquid",
+      "lessons.liquid",
+      "continue_watching.liquid"
+    ],
+    "snippets": [
+      "image.liquid",
+      "auth-button.liquid",
+      "cards.liquid",
+      "cards-item.liquid"
+    ],
+    "templates": [
+      "index.json",
+      "login.json"
+    ],
+    "locales": [
+      "pt.default.json",
+      "en.default.json",
+      "es.default.json",
+      "pt.schema.json",
+      "en.schema.json",
+      "es.schema.json"
+    ],
+    "assets": [
+      "global.css"
+    ]
+  },
+  "can_add_files_in_current_ui": "unverified/not visible",
+  "can_export_import": false,
+  "deployment": "manual copy/paste"
+}

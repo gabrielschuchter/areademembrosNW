@@ -1,0 +1,64 @@
+{
+  "retrieved_at": "2026-08-05T10:22:00-03:00",
+  "sources": [
+    {
+      "id": "drive-current-theme",
+      "type": "google_drive",
+      "url": "https://drive.google.com/drive/folders/1sSZjr9YEjb0588hXHFEk4u9JyObL6v8H",
+      "scope": "Código atual da Kiwify, imagens e vídeo da plataforma",
+      "authority": "primary-current-capture"
+    },
+    {
+      "id": "repo-site",
+      "type": "github",
+      "url": "https://github.com/gabrielschuchter/nutriwork-plus",
+      "commit": "6f1dff317060ed0b2cbae730a4f2d6675fea82b9",
+      "scope": "Produto, copy, catálogo e design system do site principal",
+      "authority": "primary-product"
+    },
+    {
+      "id": "repo-anniversary",
+      "type": "github",
+      "url": "https://github.com/gabrielschuchter/nutriwork-plus-aniversario",
+      "commit": "91b6af6ed9e44b95c9fbc739fbef4cf2e7637305",
+      "scope": "Campanha e storytelling temporal",
+      "authority": "primary-campaign/time-sensitive"
+    },
+    {
+      "id": "repo-question-bank",
+      "type": "github",
+      "url": "https://github.com/gabrielschuchter/bancodequestoesNW",
+      "commit": "5a0f2ab3c6d7338f6850378ef3c2c330601041c7",
+      "scope": "UX de dashboard, continuidade, progresso, recursos e padrões técnicos",
+      "authority": "primary-product-complement"
+    },
+    {
+      "id": "kiwify-theme-architecture",
+      "type": "official_docs",
+      "url": "https://docs.kiwify.com.br/members-area/key-concepts/theme-architecture",
+      "scope": "Arquitetura e restrições do tema",
+      "authority": "official"
+    },
+    {
+      "id": "kiwify-templates",
+      "type": "official_docs",
+      "url": "https://docs.kiwify.com.br/members-area/key-concepts/theme/templates",
+      "scope": "Templates, 25 seções, 50 blocos",
+      "authority": "official"
+    },
+    {
+      "id": "kiwify-sections",
+      "type": "official_docs",
+      "url": "https://docs.kiwify.com.br/members-area/key-concepts/theme/sections",
+      "scope": "Sections e schemas",
+      "authority": "official"
+    },
+    {
+      "id": "kiwify-objects",
+      "type": "official_docs",
+      "url": "https://docs.kiwify.com.br/members-area/reference/objects",
+      "scope": "Objetos Liquid",
+      "authority": "official"
+    }
+  ]
+}

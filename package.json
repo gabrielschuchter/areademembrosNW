@@ -1,0 +1,11 @@
+{
+  "name": "areademembros-nutriwork",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "validate": "node scripts/validate.mjs",
+    "validate:templates": "node scripts/validate-templates.mjs",
+    "validate:locales": "node scripts/validate-locales.mjs"
+  }
+}

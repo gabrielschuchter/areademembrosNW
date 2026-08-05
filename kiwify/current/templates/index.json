@@ -1,0 +1,461 @@
+{
+  "order": [
+    "7996ZM",
+    "continue-watching",
+    "bNbbqY",
+    "zw8v9B",
+    "tXMyyF",
+    "shFr5W",
+    "JDmFnH",
+    "i1KAeO",
+    "CcFgcO",
+    "646UAq",
+    "ObwY1H",
+    "2AXzoG",
+    "e2RohA",
+    "iSRCWf",
+    "9bJZ6E",
+    "FzrinZ",
+    "iSehZo",
+    "eynXew",
+    "z65Bes",
+    "e6xSnX",
+    "YD6ZRF",
+    "GYOR4p",
+    "ICXarP",
+    "5u2dM7",
+    "vj9BXF",
+    "szBQ3r"
+  ],
+  "sections": {
+    "7996ZM": {
+      "type": "banner",
+      "settings": {
+        "slides_delay": 5
+      },
+      "blocks": {
+        "RZyXxc": {
+          "id": "RZyXxc",
+          "type": "slide",
+          "settings": {
+            "banner_type": "image",
+            "mobile_image": "https://aws-assets.kiwify.com.br/mMjA6Gqfd3nPnKl/img_0_Sem-nome-768-x-432-px_87a0d19d6ec54b06acb007426c069fc4.png",
+            "desktop_image": "https://aws-assets.kiwify.com.br/mMjA6Gqfd3nPnKl/img_0_Design-sem-nome-4_5858ec7c482642a7b3acca1d6ba163d3.png"
+          }
+        }
+      },
+      "block_order": [
+        "RZyXxc"
+      ]
+    },
+    "continue-watching": {
+      "type": "continue_watching",
+      "settings": {
+        "external_section_id": "continue-watching",
+        "items_variant": "mouse_hover",
+        "margin_top": 20
+      }
+    },
+    "zw8v9B": {
+      "type": "modules",
+      "settings": {
+        "external_section_id": "zw8v9B",
+        "items_variant": "mouse_hover",
+        "title": "Boas vindas!",
+        "items_layout": "portrait",
+        "course_id": "6f0c3a5b-9d10-421d-9e24-563187c550f3"
+      }
+    },
+    "tXMyyF": {
+      "id": "tXMyyF",
+      "type": "courses",
+      "settings": {
+        "items_variant": "mouse_hover",
+        "items_layout": "portrait",
+        "all_accessible_courses": false,
+        "title": "Todos os módulos"
+      },
+      "blocks": {
+        "yAZp19": {
+          "type": "course",
+          "settings": {
+            "course_id": "01e6f3d8-d393-4870-be02-ff6a4e8becfb"
+          },
+          "id": "yAZp19"
+        },
+        "ntRABE": {
+          "type": "course",
+          "settings": {
+            "course_id": "efa35c54-8c0c-4c46-afca-520b964e460d"
+          },
+          "id": "ntRABE"
+        },
+        "oyVrg1": {
+          "type": "course",
+          "settings": {
+            "course_id": "67eb5848-1370-48ab-9e76-6612e71b2d59"
+          },
+          "id": "oyVrg1"
+        },
+        "5fCuzB": {
+          "type": "course",
+          "settings": {
+            "course_id": "ac153a30-3171-4b98-8325-6acc6922dc4f"
+          },
+          "id": "5fCuzB"
+        },
+        "4ZRZwU": {
+          "type": "course",
+          "settings": {
+            "course_id": "0e6c39ee-85cd-463c-be8d-51e3afc37a03"
+          },
+          "id": "4ZRZwU"
+        },
+        "M45ooc": {
+          "type": "course",
+          "settings": {
+            "course_id": "3ad7c4d0-32fd-4cd3-a105-14ab67a8cd15"
+          },
+          "id": "M45ooc"
+        },
+        "wYti9i": {
+          "type": "course",
+          "settings": {
+            "course_id": "8d606e06-d213-4a92-a9d7-0d45957fb647"
+          },
+          "id": "wYti9i"
+        },
+        "Z0pgxU": {
+          "type": "course",
+          "settings": {
+            "course_id": "d4b46327-f053-4bc0-8c95-71bbf3dd451f"
+          },
+          "id": "Z0pgxU"
+        },
+        "DvLlYy": {
+          "type": "course",
+          "settings": {
+            "course_id": "ebe5d6de-6a50-44ae-889d-5dcb0beef6d7"
+          },
+          "id": "DvLlYy"
+        },
+        "MDuybE": {
+          "type": "course",
+          "settings": {
+            "course_id": "25e2e4f6-3abe-439a-8ebb-b47d4541350b"
+          },
+          "id": "MDuybE"
+        },
+        "LkLH42": {
+          "type": "course",
+          "settings": {
+            "course_id": "2e58222e-9310-4108-8cec-4e0ed262cd9b"
+          },
+          "id": "LkLH42"
+        },
+        "vkviDH": {
+          "type": "course",
+          "settings": {
+            "course_id": "af36017c-af55-48ad-b7a0-7f54e6e9bdea"
+          },
+          "id": "vkviDH"
+        },
+        "DUc2Cs": {
+          "type": "course",
+          "settings": {
+            "course_id": "14b8f874-b4d7-4696-9715-637dfb65538d"
+          },
+          "id": "DUc2Cs"
+        },
+        "gYiT8N": {
+          "type": "course",
+          "settings": {
+            "course_id": "a0d5e617-9ef3-42f6-8240-355051660215"
+          },
+          "id": "gYiT8N"
+        }
+      },
+      "block_order": [
+        "yAZp19",
+        "ntRABE",
+        "oyVrg1",
+        "5fCuzB",
+        "4ZRZwU",
+        "M45ooc",
+        "wYti9i",
+        "Z0pgxU",
+        "DUc2Cs",
+        "vkviDH",
+        "DvLlYy",
+        "MDuybE",
+        "LkLH42",
+        "gYiT8N"
+      ]
+    },
+    "JDmFnH": {
+      "id": "JDmFnH",
+      "type": "lessons",
+      "settings": {
+        "items_variant": "mouse_hover",
+        "items_layout": "portrait",
+        "module_id": "4cc9ca90-0dc7-4d10-b659-b664b4f7fc95",
+        "title": "Introdução à Nutrição"
+      }
+    },
+    "i1KAeO": {
+      "id": "i1KAeO",
+      "type": "lessons",
+      "settings": {
+        "items_variant": "mouse_hover",
+        "items_layout": "portrait",
+        "module_id": "9ab5e546-ddbb-4606-aed4-761aef18fab1",
+        "title": "Aulas - Nutrição Baseada em Evidências"
+      }
+    },
+    "CcFgcO": {
+      "id": "CcFgcO",
+      "type": "lessons",
+      "settings": {
+        "items_variant": "mouse_hover",
+        "items_layout": "portrait",
+        "module_id": "b1c735cb-db38-4e5b-8f5b-0dae5aeccdbb",
+        "title": "E-books - Nutrição Baseada em Evidências"
+      }
+    },
+    "ObwY1H": {
+      "id": "ObwY1H",
+      "type": "lessons",
+      "settings": {
+        "items_variant": "mouse_hover",
+        "items_layout": "portrait",
+        "module_id": "69f3109d-0c95-4287-ae31-e8aabf6f362e",
+        "title": "E-books - Nutrição Clínica"
+      }
+    },
+    "2AXzoG": {
+      "id": "2AXzoG",
+      "type": "lessons",
+      "settings": {
+        "items_variant": "mouse_hover",
+        "items_layout": "portrait",
+        "module_id": "e5e55d99-0d41-44af-a106-a600eef2fa53",
+        "title": "Aulas - Nutrição Esportiva"
+      }
+    },
+    "9bJZ6E": {
+      "id": "9bJZ6E",
+      "type": "lessons",
+      "settings": {
+        "items_variant": "mouse_hover",
+        "items_layout": "portrait",
+        "module_id": "1e963cc1-adb1-432b-8012-0634de51c36d",
+        "title": "Aulas - Nutrição Comportamental"
+      }
+    },
+    "FzrinZ": {
+      "id": "FzrinZ",
+      "type": "lessons",
+      "settings": {
+        "items_variant": "mouse_hover",
+        "items_layout": "portrait",
+        "module_id": "0adcb439-1830-4443-bd66-42412167d4b0",
+        "title": "E-books - Nutrição Comportamental"
+      }
+    },
+    "iSehZo": {
+      "id": "iSehZo",
+      "type": "lessons",
+      "settings": {
+        "items_variant": "mouse_hover",
+        "items_layout": "portrait",
+        "module_id": "a9afe9a5-f9f4-4c03-9019-c3446c33ad6f",
+        "title": "E-books - Bioquímica da Nutrição"
+      }
+    },
+    "z65Bes": {
+      "id": "z65Bes",
+      "type": "lessons",
+      "settings": {
+        "items_variant": "mouse_hover",
+        "items_layout": "portrait",
+        "module_id": "84e8df27-1b29-496f-8e6d-cb2e04d8a309",
+        "title": "E-books - Nutrição Materno-infantil"
+      }
+    },
+    "YD6ZRF": {
+      "id": "YD6ZRF",
+      "type": "lessons",
+      "settings": {
+        "items_variant": "mouse_hover",
+        "items_layout": "portrait",
+        "module_id": "d0408d1c-96bb-453f-a9a6-0c1c951db8dd",
+        "title": "E-books - Saúde Coletiva"
+      }
+    },
+    "5u2dM7": {
+      "id": "5u2dM7",
+      "type": "lessons",
+      "settings": {
+        "items_variant": "mouse_hover",
+        "items_layout": "portrait",
+        "module_id": "c9ba5647-4579-45ba-a9ba-59559967c63c",
+        "title": "Análise de artigos"
+      }
+    },
+    "vj9BXF": {
+      "id": "vj9BXF",
+      "type": "lessons",
+      "settings": {
+        "items_variant": "mouse_hover",
+        "items_layout": "portrait",
+        "module_id": "a5d6581c-7ccb-41b3-ab2c-9a509ec13b02",
+        "title": "Podcasts"
+      }
+    },
+    "iSRCWf": {
+      "id": "iSRCWf",
+      "type": "lessons",
+      "settings": {
+        "items_variant": "mouse_hover",
+        "items_layout": "portrait",
+        "module_id": "ebb651ea-0cf9-4251-b5a5-e51b81c3af97",
+        "title": "E-books - Nutrição Esportiva"
+      }
+    },
+    "646UAq": {
+      "id": "646UAq",
+      "type": "lessons",
+      "settings": {
+        "items_variant": "mouse_hover",
+        "items_layout": "portrait",
+        "module_id": "68fdc300-40f9-4739-a1e8-8b255c7bf408",
+        "title": "Aulas - Nutrição Clínica"
+      }
+    },
+    "e6xSnX": {
+      "id": "e6xSnX",
+      "type": "lessons",
+      "settings": {
+        "items_variant": "mouse_hover",
+        "items_layout": "portrait",
+        "module_id": "40a157a9-3465-4916-a54a-7a6d1cd892b8",
+        "title": "Aulas - Saúde Coletiva"
+      }
+    },
+    "szBQ3r": {
+      "id": "szBQ3r",
+      "type": "lessons",
+      "settings": {
+        "items_variant": "mouse_hover",
+        "items_layout": "portrait",
+        "module_id": "b9fcd7e8-4bca-4d92-b0dd-495c49c39aac",
+        "title": "Comfort Place"
+      }
+    },
+    "e2RohA": {
+      "id": "e2RohA",
+      "type": "lessons",
+      "settings": {
+        "items_variant": "mouse_hover",
+        "items_layout": "portrait",
+        "module_id": "327c9edf-b015-4f1d-b94d-993e824656c9",
+        "title": "Aulas - Suplementação no Endurance"
+      }
+    },
+    "shFr5W": {
+      "id": "shFr5W",
+      "type": "courses",
+      "settings": {
+        "items_variant": "mouse_hover",
+        "items_layout": "portrait",
+        "all_accessible_courses": false,
+        "title": "Seus extras"
+      },
+      "blocks": {
+        "rm2PUN": {
+          "type": "course",
+          "settings": {
+            "course_id": "b22ba6c0-11ac-4e7c-9c10-0be663200fe2"
+          },
+          "id": "rm2PUN"
+        },
+        "Xh7J44": {
+          "type": "course",
+          "settings": {
+            "course_id": "a0d5e617-9ef3-42f6-8240-355051660215"
+          },
+          "id": "Xh7J44"
+        },
+        "fKjDpU": {
+          "type": "course",
+          "settings": {
+            "course_id": "bdb70e7d-926d-4cee-ba26-2679218c947c"
+          },
+          "id": "fKjDpU"
+        },
+        "UQoRSd": {
+          "type": "course",
+          "settings": {
+            "course_id": "19a8f91d-f6f2-475b-9148-f3ce13c9b830"
+          },
+          "id": "UQoRSd"
+        },
+        "hksHKi": {
+          "type": "course",
+          "settings": {
+            "course_id": "98b5211e-310b-480e-b7f9-626f75e0436d"
+          },
+          "id": "hksHKi"
+        }
+      },
+      "block_order": [
+        "rm2PUN",
+        "Xh7J44",
+        "fKjDpU",
+        "UQoRSd",
+        "hksHKi"
+      ]
+    },
+    "GYOR4p": {
+      "id": "GYOR4p",
+      "type": "lessons",
+      "settings": {
+        "items_variant": "mouse_hover",
+        "items_layout": "portrait",
+        "module_id": "32bb87c5-4b6b-4d49-bcc8-713e5be68d5c",
+        "title": "Aulas - Fisiologia Humana"
+      }
+    },
+    "ICXarP": {
+      "id": "ICXarP",
+      "type": "lessons",
+      "settings": {
+        "items_variant": "mouse_hover",
+        "items_layout": "portrait",
+        "module_id": "587e58a1-ecbc-4d23-84ce-616a104613cc",
+        "title": "Aulas Gravadas"
+      }
+    },
+    "bNbbqY": {
+      "id": "bNbbqY",
+      "type": "courses",
+      "settings": {
+        "items_variant": "content_over",
+        "items_layout": "portrait",
+        "all_accessible_courses": false
+      },
+      "blocks": {},
+      "block_order": []
+    },
+    "eynXew": {
+      "id": "eynXew",
+      "type": "lessons",
+      "settings": {
+        "items_variant": "mouse_hover",
+        "items_layout": "portrait",
+        "module_id": "0f26ddc6-0bce-4284-a2ab-0daf9787e2c0",
+        "title": "Aulas - Bioquímica da Nutrição"
+      }
+    }
+  }
+}

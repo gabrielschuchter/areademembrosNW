@@ -1,0 +1,25 @@
+{
+  "status": "reference—not yet applied to Kiwify",
+  "source": "nutriwork-plus and bancodequestoesNW",
+  "font_family_preferred": "Poppins or a single approved brand font; current Kiwify capture conflicts between Manrope and Outfit",
+  "colors": {
+    "blue": "#1263ff",
+    "blue_bright": "#29a8ff",
+    "dark_background": "#010206",
+    "dark_surface": "#02040a",
+    "dark_card": "#071023",
+    "light_background": "#f4f7fc",
+    "light_surface": "#ffffff",
+    "light_text": "#152033",
+    "dark_text": "#f5f7ff"
+  },
+  "principles": [
+    "alto contraste",
+    "profundidade azul controlada",
+    "superfícies claras no tema claro",
+    "glow com parcimônia",
+    "raios consistentes",
+    "foco visível",
+    "movimento reduzido respeitado"
+  ]
+}

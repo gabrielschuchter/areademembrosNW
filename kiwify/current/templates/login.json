@@ -1,0 +1,15 @@
+{
+  "sections": {
+    "main": {
+      "type": "login",
+      "settings": {
+        "variant": "background",
+        "image_background": "https://aws-assets.kiwify.com.br/mMjA6Gqfd3nPnKl/img_0_Retangulos-sombra-1_0380694adb1745daa6506f6c10d9c856.png",
+        "image_header": "https://aws-assets.kiwify.com.br/mMjA6Gqfd3nPnKl/img_0_LOGOTIPO-AZUL_6ff5d69fb7b54551a32941273ce5292c.png"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

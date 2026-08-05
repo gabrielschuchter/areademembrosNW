@@ -1,0 +1,14 @@
+{
+  "login": {
+    "title": "Acceso al área de miembros"
+  },
+  "content": {
+    "expired": "Esta lección ha expirado",
+    "upcoming": "Disponible el {{date}}",
+    "locked": "Contenido no disponible"
+  },
+  "continue_watching": {
+    "title": "Seguir viendo",
+    "fake_lesson": "Mi primera lección"
+  }
+}

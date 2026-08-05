@@ -1,0 +1,55 @@
+{
+  "brand": "Nutriwork+",
+  "category": "plataforma/grupo de estudos em Nutrição",
+  "purpose": "Tornar o estudo de Nutrição mais organizado, prático, crítico e baseado em evidências.",
+  "primary_audience": [
+    "estudantes de Nutrição",
+    "profissionais que desejam revisar fundamentos e atualizar conhecimentos"
+  ],
+  "value_pillars": [
+    {
+      "name": "Pensamento crítico",
+      "description": "Questionar condutas, conteúdos e evidências com mais segurança."
+    },
+    {
+      "name": "Aprendizado prático",
+      "description": "Entender o que importa para graduação, estágio e prática."
+    },
+    {
+      "name": "Nutrição baseada em evidências",
+      "description": "Estudar com ciência, não com achismo ou opinião pronta."
+    }
+  ],
+  "core_content_areas": [
+    "Introdução à Nutrição",
+    "Bioquímica da Nutrição",
+    "Nutrição Baseada em Evidências",
+    "Nutrição Esportiva",
+    "Nutrição Comportamental",
+    "Fisiologia Humana",
+    "Nutrição Clínica",
+    "Nutrição Materno-infantil",
+    "Saúde Coletiva"
+  ],
+  "formats": [
+    "cursos",
+    "aulas gravadas",
+    "e-books",
+    "análises de artigos",
+    "podcasts/NW Cast",
+    "encontros gravados",
+    "recursos de estudo",
+    "Comfort Place"
+  ],
+  "support": {
+    "email": "equipenutriwork@gmail.com",
+    "whatsapp": "+55 12 99750-5188"
+  },
+  "claims_requiring_revalidation": [
+    "preços",
+    "quantidade de alunos",
+    "quantidade de conteúdos",
+    "condições de campanha",
+    "períodos de acesso e inclusões promocionais"
+  ]
+}

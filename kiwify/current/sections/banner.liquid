@@ -1,0 +1,44 @@
+{% assign slides_count = section.block_order.size %}
+{% assign slides_delay = section.settings.slides_delay | default: 3 %}
+{% assign slides_order = section.block_order %}
+{% assign slides = section.blocks %}
+
+{% if slides_count > 0 or is_preview %}
+  <div class="embla relative overflow-hidden group" data-slides-delay="{{ slides_delay }}" data-embla-options='{ "loop": true, "dragFree": false{% if slides_count == 1 %}, "active": false{% endif %} }'>
+    <div class="embla__viewport overflow-hidden">
+      <div class="embla__container flex">
+        {%- for slide_id in slides_order -%}
+          {%- assign slide = slides[slide_id].settings -%}
+          <div class="embla__slide flex-shrink-0 w-screen max-w-full">
+            {%- if slide.banner_type == 'image' -%}
+              <picture>
+                {% if slide.desktop_image %}<source media="(min-width: 768px)" srcset="{{ slide.desktop_image }}">{% endif %}
+                {% if slide.mobile_image %}<source srcset="{{ slide.mobile_image }}">{% endif %}
+                <img src="{{ slide.desktop_image | default: slide.mobile_image }}" alt="" loading="lazy" width="2000" height="590" class="select-none pointer-events-none w-full aspect-[768/432] sm:aspect-[2000/590] object-cover">
+              </picture>
+            {%- endif -%}
+          </div>
+        {%- endfor -%}
+      </div>
+    </div>
+    {% if slides_count > 1 %}
+      <button data-embla-prev class="embla__button absolute z-10 transform top-1/2 -translate-y-1/2 flex items-center justify-center rounded-md outline-none p-0 m-0 w-8 lg:w-12 h-8 lg:h-12 *:w-6 lg:*:w-8 *:h-6 lg:*:h-8 opacity-50 sm:opacity-0 sm:group-hover:opacity-50 sm:group-focus-within:opacity-50 text-primary-foreground bg-primary-500 group-hover:hover:opacity-100 focus-visible:outline-primary-500 focus-visible:focus:opacity-100 transition-all ease-in-out duration-300 left-0 md:left-2 scale-100"><svg aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 16 16"><path fill="currentColor" fill-rule="evenodd" d="M9.78 4.22a.75.75 0 0 1 0 1.06L7.06 8l2.72 2.72a.75.75 0 1 1-1.06 1.06L5.47 8.53a.75.75 0 0 1 0-1.06l3.25-3.25a.75.75 0 0 1 1.06 0" clip-rule="evenodd"></path></svg></button>
+      <button data-embla-next class="embla__button absolute z-10 transform top-1/2 -translate-y-1/2 flex items-center justify-center rounded-md outline-none p-0 m-0 w-8 lg:w-12 h-8 lg:h-12 *:w-6 lg:*:w-8 *:h-6 lg:*:h-8 opacity-50 sm:opacity-0 sm:group-hover:opacity-50 sm:group-focus-within:opacity-50 text-primary-foreground bg-primary-500 group-hover:hover:opacity-100 focus-visible:outline-primary-500 focus-visible:focus:opacity-100 transition-all ease-in-out duration-300 right-0 md:right-2 scale-100"><svg aria-hidden="true" role="img" width="1em" height="1em" viewBox="0 0 16 16"><path fill="currentColor" fill-rule="evenodd" d="M6.22 4.22a.75.75 0 0 1 1.06 0l3.25 3.25a.75.75 0 0 1 0 1.06l-3.25 3.25a.75.75 0 0 1-1.06-1.06L8.94 8L6.22 5.28a.75.75 0 0 1 0-1.06" clip-rule="evenodd"></path></svg></button>
+    {% endif %}
+    {% if slides_count > 1 %}
+      <div class="absolute bottom-4 left-0 right-0 flex gap-1 justify-center">
+        {%- for slide_id in slides_order -%}<button class="flex-shrink-0 w-4 h-4 flex items-center justify-center" data-embla-dot><div class="dot w-2 h-2 rounded-full bg-primary opacity-30 hover:opacity-50 transition-all duration-200"></div></button>{%- endfor -%}
+      </div>
+    {% endif %}
+  </div>
+{% endif %}
+{% schema %}
+{
+  "name": "t:sections.banner.title",
+  "settings": [{"type":"range","id":"slides_delay","label":"t:sections.banner.slides_delay","min":3,"max":60,"step":1,"default":3,"unit":"s"}],
+  "kiwi_extra":{"icon":"fas fa-images"},
+  "max_blocks":3,
+  "blocks":[{"type":"slide","name":"t:sections.banner.slide","settings":[{"type":"select","id":"banner_type","label":"t:sections.banner.banner_type","default":"image","options":[{"value":"image","label":"t:sections.banner.image","kiwi_extra":{"icon":"fas fa-image"}}],"kiwi_extra":{"icon":"fas fa-cog","hidden":true}},{"type":"image_picker","id":"mobile_image","label":"t:sections.banner.mobile_image","default":"https://placehold.co/768x432"},{"type":"image_picker","id":"desktop_image","label":"t:sections.banner.desktop_image","default":"https://placehold.co/2000x590"}]}],
+  "presets":[{"name":"t:sections.banner.title","blocks":[{"type":"slide"}]}]
+}
+{% endschema %}
