@@ -14,6 +14,19 @@ Melhorar profundamente design, clareza, responsividade, acessibilidade, estados 
 6. O visual adotará base escura premium, azul Nutriwork, tipografia Poppins com fallback de sistema e suporte funcional ao tema claro.
 7. Informação essencial ficará no HTML/Liquid. CSS será aprimoramento visual, nunca requisito para entender ou usar a página.
 8. A compatibilidade funcional do aplicativo é obrigatória. Diferença estética é aceitável; conteúdo invisível, rota quebrada, toque falho e estado incorreto bloqueiam a publicação.
+9. O produto **ESTUDE!** será tratado corretamente como e-book de organização da rotina de estudos, nunca como “Studio” ou como experiência genérica.
+
+## Identidade correta do ESTUDE!
+
+- **nome:** ESTUDE!;
+- **tipo:** e-book;
+- **categoria:** organização de estudos;
+- **descrição funcional:** material prático para definir prioridades, organizar o tempo e manter constância sem sobrecarga;
+- **abordagem:** método de organização de estudos baseado em evidências;
+- **badge visual:** E-BOOK;
+- **subtítulo recomendado:** Organize sua rotina de estudos com mais direção e constância.
+
+O ESTUDE! integra o ecossistema Nutriwork como produto editorial próprio. Na área de membros, sua apresentação deve comunicar claramente que se trata de um livro digital, e não de um módulo acadêmico, podcast, comunidade ou experiência de estúdio.
 
 ## Arquivos e responsabilidades
 
@@ -78,7 +91,8 @@ Melhorar profundamente design, clareza, responsividade, acessibilidade, estados 
 - manter “Todos os módulos” e “Seus extras”;
 - criar variantes visuais `catalog-main` e `extras`;
 - exibir quantidade de conteúdo quando disponível;
-- diferenciar produto acadêmico, encontro, podcast, análise, comunidade e Studio por badge;
+- diferenciar produto acadêmico, encontro, podcast, análise, comunidade e **ESTUDE!** por badge;
+- classificar o ESTUDE! como `E-BOOK` e `ORGANIZAÇÃO DE ESTUDOS`;
 - preservar seleção de cursos e ofertas.
 
 ### `lessons.liquid`
@@ -102,13 +116,15 @@ Melhorar profundamente design, clareza, responsividade, acessibilidade, estados 
 - remover somente `bNbbqY`;
 - adicionar configurações editoriais às instâncias existentes;
 - definir variantes, subtítulos, badges e acentos;
+- identificar corretamente o ESTUDE! como e-book;
 - permanecer com no máximo 25 seções.
 
 ### Locales
 
 - atualizar PT, EN e ES em paralelo;
 - padronizar datas, estados, CTAs, labels e mensagens vazias;
-- manter paridade de chaves entre os três idiomas.
+- manter paridade de chaves entre os três idiomas;
+- preservar a marca `ESTUDE!` sem tradução.
 
 ## Execução por release
 
@@ -172,14 +188,16 @@ Melhorar profundamente design, clareza, responsividade, acessibilidade, estados 
 7. Aplicar badge de formato em cada card.
 8. Mostrar quantidade de conteúdo quando disponível.
 9. Ajustar espaçamento para aproximar fileiras da mesma área e separar áreas diferentes.
-10. Adicionar bloco final de suporte dentro da última instância existente.
+10. Identificar o ESTUDE! como e-book de organização de estudos, com badge `E-BOOK`.
+11. Adicionar bloco final de suporte dentro da última instância existente.
 
 ### Critério de aceite
 
 - todas as fileiras permanecem visíveis e na mesma ordem;
 - o usuário identifica área e formato sem abrir o card;
 - a página comunica volume sem parecer visualmente indiferenciada;
-- extras são reconhecidos como conteúdo adicional do acesso.
+- extras são reconhecidos como conteúdo adicional do acesso;
+- o ESTUDE! é reconhecido imediatamente como e-book de organização de estudos.
 
 ## Release 0.5.0 — Login e paridade
 
@@ -232,6 +250,7 @@ Melhorar profundamente design, clareza, responsividade, acessibilidade, estados 
 - comunidade;
 - todos os módulos;
 - extras;
+- ESTUDE!;
 - cada tipo de fileira;
 - cards sem imagem;
 - progresso;
