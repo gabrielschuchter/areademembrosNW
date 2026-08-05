@@ -32,9 +32,22 @@ Por isso, a repetição de fileiras por módulo e formato é deliberada.
    - Análise de artigo;
    - NW Cast;
    - Comfort Place;
-   - Studio.
+   - **ESTUDE!**, e-book prático de organização da rotina de estudos.
 6. **Seus extras**, variável conforme os produtos e acessos do aluno.
 7. **Detalhamento do acervo por módulo**, mantendo fileiras próprias para aulas, e-books e outros formatos existentes.
+
+## Identidade correta do ESTUDE!
+
+O **ESTUDE!** não é uma experiência chamada “Studio”. É um produto editorial do Nutriwork em formato de e-book, voltado à organização da rotina de estudos. O material ajuda o estudante a definir prioridades, organizar o tempo e manter constância sem sobrecarga, com abordagem baseada em evidências.
+
+Na área de membros, o ESTUDE! deve ser identificado visualmente como:
+
+- **nome:** ESTUDE!;
+- **tipo:** e-book;
+- **categoria:** organização de estudos;
+- **função:** orientar rotina, prioridades, tempo e constância;
+- **badge recomendado:** E-BOOK;
+- **subtítulo recomendado:** Organize sua rotina de estudos com mais direção e constância.
 
 ## O que não pode ser feito sem nova autorização
 
